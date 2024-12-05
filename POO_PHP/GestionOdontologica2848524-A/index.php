@@ -27,7 +27,6 @@
         } elseif ($_GET["accion"] == "guardarCita") {
             $controlador->agregarCita(
                 $_POST["asignarDocumento"],
-
                 $_POST["medico"],
                 $_POST["fecha"],
                 $_POST["hora"],
@@ -35,12 +34,18 @@
             );
         } elseif ($_GET["accion"] == "consultarCita") {
             $controlador->consultarCitas($_POST["consultarDocumento"]);
-        }
-        elseif ($_GET["accion"] == "cancelarCita") {
+        } elseif ($_GET["accion"] == "cancelarCita") {
             $controlador->cancelarCitas($_POST["cancelarDocumento"]);
-        } 
-        elseif ($_GET["accion"] == "consultarPaciente") {
+        } elseif ($_GET["accion"] == "consultarPaciente") {
             $controlador->consultarPaciente($_GET["documento"]);
+        } elseif ($_GET["accion"] == "ingresarPaciente") {
+            $controlador->agregarPaciente(
+                $_GET["PacDocumento"],
+                $_GET["PacNombres"],
+                $_GET["PacApellidos"],
+                $_GET["PacNacimiento"],
+                $_GET["PacSexo"]
+            );
         }
     } else {
         $controlador->verPagina('Vista/html/inicio.php');

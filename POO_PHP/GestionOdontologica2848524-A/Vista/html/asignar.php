@@ -6,6 +6,13 @@
     <link rel="stylesheet" type="text/css" href="Vista/css/estilos.css">
     <script type="text/javascript" src="Vista/jquery/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="Vista/js/script.js"></script>
+    <script src="Vista/jquery/jquery-ui-1.14.1.custom/jquery-ui.js"
+        type="text/javascript"></script>
+    <link href="Vista/jquery/jquery-ui-1.14.1.custom/jquery-ui.min.css"
+        rel="stylesheet" type="text/css" />
+    <script src="Vista/js/script.js" type="text/javascript"></script>
+    <script>
+    </script>
 </head>
 
 <body>
@@ -85,19 +92,72 @@
                                 </div>
         </div>
 
-    
-        <script type="text/javascript">
-        $(function() {
-            function consultarPaciente() {
-                var url = "index.php?accion=consultarPaciente&documento=" + $("#asignarDocumento").val();
-                $("#paciente").load(url);
-            }
+        <div id="frmPaciente" title="Agregar Nuevo Paciente">
+            <form id="agregarPaciente">
+                <table>
+                    <tr>
+                        <td>Documento</td>
 
-            $("#asignarConsultar").click(function() {
-                consultarPaciente();
+                        <td><input type="text" name="PacDocumento"
+
+                                id="PacDocumento"></td>
+                    </tr>
+                    <tr>
+
+                        <td>Nombres</td>
+
+                        <td><input type="text" name="PacNombres"
+
+                                id="PacNombres"></td>
+                    </tr>
+                    <tr>
+
+                        <td>Apellidos</td>
+
+                        <td><input type="text" name="PacApellidos"
+
+                                id="PacApellidos"></td>
+                    </tr>
+                    <tr>
+
+                        <td>Fecha de Nacimiento</td>
+
+                        <td><input type="text" name="PacNacimiento"
+
+                                id="PacNacimiento"></td>
+                    </tr>
+                    <tr>
+
+                        <td>Sexo</td>
+
+                        <td>
+
+                            <select id="pacSexo" name="PacSexo">
+                                <option value="-1"
+                                    selected="selected">--Selecione el sexo ---</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+
+        <script type="text/javascript">
+            $(function() {
+                function consultarPaciente() {
+                    var url = "index.php?accion=consultarPaciente&documento=" + $("#asignarDocumento").val();
+                    $("#paciente").load(url);
+                }
+
+                $("#asignarConsultar").click(function() {
+                    consultarPaciente();
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>

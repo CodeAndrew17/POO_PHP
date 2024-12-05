@@ -4,6 +4,7 @@
 <head>
     <title>Sistema de Gestión Odontológica</title>
     <link rel="stylesheet" type="text/css" href="Vista/css/estilos.css">
+    <script type="text/javascript" src="Vista/jquery/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>

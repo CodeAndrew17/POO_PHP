@@ -4,6 +4,8 @@
 <head>
     <title>Asignar cita</title>
     <link rel="stylesheet" type="text/css" href="Vista/css/estilos.css">
+    <script type="text/javascript" src="Vista/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="Vista/js/script.js"></script>
 </head>
 
 <body>
@@ -28,7 +30,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"><input type="button" value="Consultar"
-                                name="asignarConsultar" id="asignarConsultar"></td>
+                                name="asignarConsultar" id="asignarConsultar" onclick="consultarPaciente()"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -79,9 +81,23 @@
                     <tr>
                         <td colspan="2">
                             <input type="submit" name="asignarEnviar" value="Enviar"
-                                
+
+                                </div>
         </div>
-    </div>
+
+    
+        <script type="text/javascript">
+        $(function() {
+            function consultarPaciente() {
+                var url = "index.php?accion=consultarPaciente&documento=" + $("#asignarDocumento").val();
+                $("#paciente").load(url);
+            }
+
+            $("#asignarConsultar").click(function() {
+                consultarPaciente();
+            });
+        });
+    </script>
 </body>
 
 </html>
